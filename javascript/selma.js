@@ -1,4 +1,5 @@
 var loadingBook = "";
+var menuOpen = true;
 $().ready(function(){
   setupMenu();
 
@@ -10,6 +11,18 @@ function setupMenu() {
     loadBook(filename);
     loadingBook = $(this).html();
   })
+  $(".menu-title").on("click", toggleMenu);
+}
+
+function toggleMenu() {
+  if(menuOpen) {
+    $(".menu").animate({width:'100px'});
+    $(".menu").addClass("hidden");
+  } else {
+    $(".menu").animate({width:'300px'});
+    $(".menu").removeClass("hidden");
+  }
+  menuOpen = !menuOpen;
 }
 
 function loadBook(filename) {

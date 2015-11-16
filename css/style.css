@@ -25,14 +25,21 @@ h1 {
   top: 0;
   left: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
+
+.hidden .literature {
+  display:none;
+}
+
 .literature {
-  list-style-type: none;
-    padding-left: 0;
+  list-style-type:none;
+    padding-left: 24px;
 }
 
 .literature li {
-  margin:12px 0 0px;
+  margin:16px 0 0px;
+  font-size:18px;
   cursor:pointer;
 }
 
