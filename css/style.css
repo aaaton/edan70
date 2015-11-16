@@ -24,6 +24,7 @@ h1 {
   position: fixed;
   top: 0;
   left: 0;
+  box-sizing: border-box;
 }
 .literature {
   list-style-type: none;
