@@ -13,10 +13,10 @@ function setupMenu() {
 function loadBook(filename) {
   //TODO
   console.log(filename);
-
+  $(".body").html("<img class='spinner' src='spinner.gif'>");
   $.get(filename, showBook, "text");
 }
 
 function showBook(data){
-  console.log(data);
+  $(".body").html(data);
 }
