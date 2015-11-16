@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Selma Lagerlöf</title>
+    <link href="style.css" type="text/css" rel="stylesheet"/>
   </head>
   <body>
     <div class="header">
