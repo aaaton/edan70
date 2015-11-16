@@ -45,7 +45,8 @@ h1 {
 
 .book {
   margin-left:300px;
-  padding-left:24px;
+  margin-right:200px;
+  padding: 0 24px;
 }
 
 .body{
