@@ -9,12 +9,12 @@ h1 {
 /*------Class tags ------------------*/
 .header {
   text-align:center;
-  margin-top:24px;
+  padding-top:24px;
 }
 
 .menu {
   display: block;
-  width: 60px;
+  width: 300px;
   height: 700px;
   background-color: white;
   border: 0px solid #333;
@@ -22,6 +22,15 @@ h1 {
   float: left;
   margin-right: 24px;
   padding: 20px;
+}
+.literature {
+  list-style-type: none;
+    padding-left: 0;
+}
+
+.literature li {
+  margin:12px 0 0px;
+  cursor:pointer;
 }
 
 .body{
