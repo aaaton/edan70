@@ -40,7 +40,12 @@ function showBook(data){
 
 function clickCharacters() {
   $(".body span").on('click',function(){
-    var classname = $(this).Class()
-    $("."+classname).addClass("highlight")
+    var classes = $(this).attr("class")
+    if(classes.contains(" ")) {
+      console.log("class name contains space")
+      //TODO
+    } else {
+      $("."+classes).addClass("highlight")
+    }
   })
 }
