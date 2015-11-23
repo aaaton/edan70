@@ -55,6 +55,10 @@ h1 {
   line-height: 1.4;
 }
 
+.highlight {
+  background-color:lightgreen;
+}
+
 .spinner {
   margin: 0 auto;
   display: block;

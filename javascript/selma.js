@@ -2,7 +2,7 @@ var loadingBook = "";
 var menuOpen = true;
 $().ready(function(){
   setupMenu();
-
+  clickCharacters();
 });
 
 function setupMenu() {
@@ -35,4 +35,12 @@ function showBook(data){
   $(".header h1").html(loadingBook);
   $(".header h2").html("av Selma Lagerlöf");
   $(".body").html(data);
+}
+
+
+function clickCharacters() {
+  $(".body span").on('click',function(){
+    var classname = $(this).Class()
+    $("."+classname).addClass("highlight")
+  })
 }
