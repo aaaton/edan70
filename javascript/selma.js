@@ -42,10 +42,11 @@ function showBook(data){
 function clickCharacters() {
   $(".body span").on('click',function(){
     var classes = $(this).attr("class");
-    if(classes.hasClass("highlight") > -1) {
-      $("."+classes).removeClass("highlight")
-      //TODO
+    if($(this).hasClass("highlight")) {
+      console.log("removing class")
+      $(".highlight").removeClass("highlight")
     } else {
+      console.log("adding class")
       $(this).addClass("highlight")
       $("."+classes).addClass("highlight");
     }
