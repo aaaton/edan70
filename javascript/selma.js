@@ -35,6 +35,7 @@ function showBook(data){
   $(".header h1").html(loadingBook);
   $(".header h2").html("av Selma Lagerlöf");
   $(".body").html(data);
+  clickCharacters();
 }
 
 
