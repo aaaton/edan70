@@ -42,19 +42,17 @@ function showBook(data){
 function clickCharacters() {
   $(".body span").on('click',function(){
     var classes = $(this).attr("class");
-    if($(this).hasClass("highlight")) {
-      console.log("removing class")
-      $(".highlight").removeClass("highlight")
-    } else {
+    $(".highlight").removeClass("highlight")
+     if(!$(this).hasClass("highlight")) {
       console.log("adding class")
       $(this).addClass("highlight")
       $("."+classes).each(function(){
         marktag(this)
-      });
+      })
     }
   });
 }
 
 function marktag(span) {
-  span.parentsUntil(".body").addClass("highlight")
+  $(span).parentsUntil(".body").addClass("highlight")
 }
