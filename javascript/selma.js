@@ -40,12 +40,13 @@ function showBook(data){
 
 function clickCharacters() {
   $(".body span").on('click',function(){
-    var classes = $(this).attr("class")
-    if(classes.contains(" ")) {
-      console.log("class name contains space")
+    console.log("Clicked a character name")
+    var classes = $(this).attr("class");
+    if(classes.indexOf(" ") > -1) {
+      console.log("class name contains space");
       //TODO
     } else {
-      $("."+classes).addClass("highlight")
+      $("."+classes).addClass("highlight");
     }
-  })
+  });
 }
