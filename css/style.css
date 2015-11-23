@@ -59,6 +59,10 @@ h1 {
   background-color:lightgreen;
 }
 
+.body span {
+  cursor:pointer;
+}
+
 .spinner {
   margin: 0 auto;
   display: block;

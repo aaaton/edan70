@@ -48,7 +48,13 @@ function clickCharacters() {
     } else {
       console.log("adding class")
       $(this).addClass("highlight")
-      $("."+classes).addClass("highlight");
+      $("."+classes).each(function(){
+        marktag(this)
+      });
     }
   });
+}
+
+function marktag(span) {
+  span.parentsUntil(".body").addClass("highlight")
 }
