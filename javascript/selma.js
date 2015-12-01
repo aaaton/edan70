@@ -1,11 +1,10 @@
 var loadingBook = "";
 var menuOpen = true;
-var charactersOpen = true;
+
 $().ready(function(){
   setupMenu();
-  setupCharacters();
-  $(".literature li:first").click()
-  $(".menu-title").click()
+  $(".literature li:first").click();
+  $(".menu-title").click();
 });
 
 function setupMenu() {
@@ -30,6 +29,7 @@ function toggleMenu() {
   }
   menuOpen = !menuOpen;
 }
+
 
 function loadBook(filename) {
   $(".body").html("<img class='spinner' src='spinner.gif'>");
