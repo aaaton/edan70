@@ -55,6 +55,9 @@ function showCharacters(data) {
 
 function clickCharacters() {
   $(".body span, .characterList span").on('click',function(){
+    if($(this).parent().is("span")){
+      return;
+    }
     if($(this).hasClass("highlight")) {
       $(".highlight").removeClass("highlight")
     } else {
