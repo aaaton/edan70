@@ -68,3 +68,23 @@ h1 {
   display: block;
   margin-top: 50px;
 }
+
+.characters {
+  display: block;
+  width: 200px;
+  height: 100%;
+  background-color: #FFF;
+  border: 0px solid #333;
+  border-left-width: 1px;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.characterList span {
+  display:block;
+  margin:5px;
+}
