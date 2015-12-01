@@ -81,10 +81,15 @@ h1 {
   top: 0;
   right: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: scroll;
 }
 
 .characterList span {
   display:block;
   margin:5px;
+  cursor:pointer;
+}
+
+.menu-title, .characters-title {
+  cursor: pointer;
 }

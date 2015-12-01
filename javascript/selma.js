@@ -29,7 +29,6 @@ function toggleMenu() {
 }
 
 function loadBook(filename) {
-  console.log(filename);
   $(".body").html("<img class='spinner' src='spinner.gif'>");
   $.get(filename, showBook, "text");
 }
@@ -42,7 +41,6 @@ function showBook(data){
 }
 
 function loadCharacters(filename) {
-  console.log(filename);
   $(".characterList").html("<img class='spinner' src='spinner.gif'>");
   $.get(filename, showCharacters, "text");
 }
@@ -53,15 +51,14 @@ function showCharacters(data) {
 
 
 function clickCharacters() {
-  $(".body span").on('click',function(){
+  $(".body span, .characterList span").on('click',function(){
     var classes = $(this).attr("class");
     if($(this).hasClass("highlight")) {
       console.log("removing class")
       $(".highlight").removeClass("highlight")
     } else {
       console.log("adding class")
-      $(this).addClass("highlight")
-      $("."+classes).addClass("highlight")
+      $(".body ."+classes).addClass("highlight")
     }
   });
 }
