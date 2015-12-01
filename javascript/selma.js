@@ -53,14 +53,12 @@ function showCharacters(data) {
 function clickCharacters() {
   $(".body span, .characterList span").on('click',function(){
     var classes = $(this).attr("class");
-    if($(this).hasClass("highlight")) {
-      console.log("removing class")
-      $(".highlight").removeClass("highlight")
-    } else {
-      console.log("adding class")
-      $(this).addClass("highlight")
-      $(".body ."+classes).addClass("highlight")
-    }
+    console.log("removing class")
+    $(".highlight").removeClass("highlight")
+    console.log("adding class")
+    $(this).addClass("highlight")
+    $(".body ."+classes).addClass("highlight")
+
   });
 }
 
