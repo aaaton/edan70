@@ -7,8 +7,11 @@ $().ready(function(){
 
 function setupMenu() {
   $(".literature li").on("click", function(){
-    var filename = "literature/"+$(this).attr("value")+".txt";
+    var story = $(this).attr("value");
+    var filename = "literature/"+story+".html";
+    var characterList = "literature/characters/"+story+".html"
     loadBook(filename);
+    loadCharacters(characterList)
     loadingBook = $(this).html();
   })
   $(".menu-title").on("click", toggleMenu);
@@ -36,6 +39,16 @@ function showBook(data){
   $(".header h2").html("av Selma Lagerlöf");
   $(".body").html(data);
   clickCharacters();
+}
+
+function loadCharacters(filename) {
+  console.log(filename);
+  $(".characterList").html("<img class='spinner' src='spinner.gif'>");
+  $.get(filename, showCharacters, "text");
+}
+
+function showCharacters(data) {
+  $(".characterList").html(data);
 }
 
 
