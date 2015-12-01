@@ -24,7 +24,7 @@ function toggleMenu() {
     $(".menu").animate({width:'100px'});
     $(".menu").addClass("hidden");
   } else {
-    $(".menu").animate({width:'300px'});
+    $(".menu").animate({width:'200px'});
     $(".menu").removeClass("hidden");
   }
   menuOpen = !menuOpen;

@@ -15,7 +15,7 @@ h1 {
 
 .menu {
   display: block;
-  width: 300px;
+  width: 200px;
   height: 100%;
   background-color: white;
   border: 0px solid #333;
@@ -34,18 +34,18 @@ h1 {
 
 .literature {
   list-style-type:none;
-    padding-left: 24px;
+  padding-left: 0px;
 }
 
 .literature li {
-  margin:16px 0 0px;
-  font-size:18px;
+  margin:12px 0 0px;
+  font-size:16px;
   cursor:pointer;
 }
 
 .book {
   margin-left:300px;
-  margin-right:200px;
+  margin-right:250px;
   padding: 0 24px;
 }
 
