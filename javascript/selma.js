@@ -1,5 +1,6 @@
 var loadingBook = "";
 var menuOpen = true;
+var clickCharactersCalled = false;
 
 $().ready(function(){
   setupMenu();
@@ -9,6 +10,7 @@ $().ready(function(){
 
 function setupMenu() {
   $(".literature li").on("click", function(){
+    clickCharactersCalled = false;
     var story = $(this).attr("value");
     var filename = "literature/"+story+".html";
     var characterList = "literature/characters/"+story+".html"
@@ -55,6 +57,10 @@ function showCharacters(data) {
 
 
 function clickCharacters() {
+  if(clickCharactersCalled)
+    return;
+
+  clickCharactersCalled = true
   $(".body span, .characterList span").on('click',function(){
     if($(this).parent().is("span")){
       return;
