@@ -28,7 +28,7 @@ h1 {
   overflow: hidden;
 }
 
-.hidden .literature {
+.hidden .literature , .hidden .characterList{
   display:none;
 }
 

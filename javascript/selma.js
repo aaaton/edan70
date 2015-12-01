@@ -1,8 +1,13 @@
 var loadingBook = "";
 var menuOpen = true;
+var charactersOpen = true;
 $().ready(function(){
   setupMenu();
+  setupCharacters();
   clickCharacters();
+  $(".literature li:first").click()
+  $(".menu-title").click()
+  $("characters-title").click()
 });
 
 function setupMenu() {
@@ -26,6 +31,20 @@ function toggleMenu() {
     $(".menu").removeClass("hidden");
   }
   menuOpen = !menuOpen;
+}
+
+function setupCharacters() {
+  $(".characters-title").on("click",toggleCharacters);
+}
+
+function toggleCharacters(){
+  if(charactersOpen) {
+    $(".characters").animate({width:'100px'});
+    $(".characters").addClass("hidden");
+  } else {
+    $(".characters").animate({width:'200px'});
+    $(".characters").removeClass("hidden");
+  }
 }
 
 function loadBook(filename) {
