@@ -55,13 +55,13 @@ function showCharacters(data) {
 
 function clickCharacters() {
   $(".body span, .characterList span").on('click',function(){
-    var classes = $(this).attr("class");
-    console.log("removing class")
-    $(".highlight").removeClass("highlight")
-    console.log("adding class")
-    $(this).addClass("highlight")
-    $(".body ."+classes).addClass("highlight")
-
+    if($(this).hasClass("highlight")) {
+      $(".highlight").removeClass("highlight")
+    } else {
+      var classes = $(this).attr("class");
+      $(".highlight").removeClass("highlight")
+      $("."+classes).addClass("highlight")
+    }
   });
 }
 
