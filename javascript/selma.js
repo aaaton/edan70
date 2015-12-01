@@ -50,6 +50,7 @@ function loadCharacters(filename) {
 
 function showCharacters(data) {
   $(".characterList").html(data);
+  clickCharacters();
 }
 
 
