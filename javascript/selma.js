@@ -58,6 +58,7 @@ function clickCharacters() {
       $(".highlight").removeClass("highlight")
     } else {
       console.log("adding class")
+      $(this).addClass("highlight")
       $(".body ."+classes).addClass("highlight")
     }
   });
