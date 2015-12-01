@@ -64,7 +64,7 @@ function clickCharacters() {
       var classes = $(this).attr("class");
       $(".highlight").removeClass("highlight")
       $("."+classes).addClass("highlight")
-      scrollTo($("."+classes+":first"))
+      scrollTo($(".body ."+classes+":first"))
     }
   });
 }
