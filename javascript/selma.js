@@ -76,6 +76,6 @@ function marktag(span) {
 function scrollTo(element) {
   console.log("scrolling")
   $(window).scrollTop(
-    element.offset().top - $(window).offset().top
+    element.offset().top
   )
 }
