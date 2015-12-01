@@ -64,10 +64,17 @@ function clickCharacters() {
       var classes = $(this).attr("class");
       $(".highlight").removeClass("highlight")
       $("."+classes).addClass("highlight")
+      scrollTo($("."+classes+":first"))
     }
   });
 }
 
 function marktag(span) {
   $(span).parentsUntil(".body").addClass("highlight")
+}
+
+function scrollTo(element) {
+  $(".body").scrollTop(
+    element.offset().top - $(".body").offset().top + $(".body").scrollTop()
+  )
 }
