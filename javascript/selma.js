@@ -68,10 +68,13 @@ function clickCharacters() {
     if($(this).hasClass("highlight")) {
       $(".highlight").removeClass("highlight")
     } else {
-      var classes = $(this).attr("class");
+      var classField = $(this).attr("class");
+      var classes = classField.split(" ")
       $(".highlight").removeClass("highlight")
-      $("."+classes).addClass("highlight")
-      scrollTo($(".body ."+classes+":first"))
+      for(var i = 0; i<classes.length;i++) {
+        $("."+classes[i]).addClass("highlight")
+      }
+      scrollTo($(".body ."+classes[0]+":first"))
     }
   });
 }
