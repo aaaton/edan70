@@ -1,6 +1,5 @@
 var loadingBook = "";
 var menuOpen = true;
-var clickCharactersCalled = false;
 
 $().ready(function(){
   setupMenu();
@@ -42,7 +41,7 @@ function showBook(data){
   $(".header h1").html(loadingBook);
   $(".header h2").html("av Selma Lagerlöf");
   $(".body").html(data);
-  clickCharacters();
+  clickCharacters(".body");
 }
 
 function loadCharacters(filename) {
@@ -52,16 +51,12 @@ function loadCharacters(filename) {
 
 function showCharacters(data) {
   $(".characterList").html(data);
-  clickCharacters();
+  clickCharacters(".characterList");
 }
 
 
-function clickCharacters() {
-  if(clickCharactersCalled)
-    return;
-
-  clickCharactersCalled = true
-  $(".body span, .characterList span").on('click',function(){
+function clickCharacters(holder) {
+  $(+holder" span").on('click',function(){
     if($(this).parent().is("span")){
       return;
     }
