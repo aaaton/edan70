@@ -56,7 +56,7 @@ function showCharacters(data) {
 
 
 function clickCharacters(holder) {
-  $(+holder" span").on('click',function(){
+  $(holder+" span").on('click',function(){
     if($(this).parent().is("span")){
       return;
     }
