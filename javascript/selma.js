@@ -57,13 +57,17 @@ function showCharacters(data) {
 
 function clickCharacters() {
   $(".characters span").on('click',function(){
+	  if($(this).hasClass("highlight")) {
+		  $(".highlight").removeClass("highlight");
+	  } else {
       var classField = $(this).attr("class");
-      var classes = classField.split(" ")
-      $(".highlight").removeClass("highlight")
+      var classes = classField.split(" ");
+      $(".highlight").removeClass("highlight");
       for(var i = 0; i<classes.length;i++) {
         $("."+classes[i]).addClass("highlight")
       }
       scrollTo($(".body ."+classes[0]+":first"))
+  	}
   });
 }
 
@@ -72,12 +76,18 @@ function clickInText() {
 		if($(this).parent().is("span")){
 	      return;
 	    }
-		$(".highlight").removeClass("highlight");
-		var classes = $(this).attr("class");
-		classes = $(".characters ."+classes).attr("class");
-	    for(var i = 0; i<classes.length;i++) {
-	      $("."+classes[i]).addClass("highlight")
-	    }
+  	  	if($(this).hasClass("highlight")) {
+  		  	$(".highlight").removeClass("highlight");
+  	  	} else {
+			$(".highlight").removeClass("highlight");
+			var classes = $(this).attr("class");
+			classes = $(".characters ."+classes).attr("class");
+			classes = classes.split(" ");
+	    	
+			for(var i = 0; i<classes.length;i++) {
+	      	  $("."+classes[i]).addClass("highlight")
+			}
+	  	}
     });
 }
 
