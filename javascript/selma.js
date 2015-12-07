@@ -41,7 +41,7 @@ function showBook(data){
   $(".header h1").html(loadingBook);
   $(".header h2").html("av Selma Lagerlöf");
   $(".body").html(data);
-  clickCharacters(".body");
+  clickInText();
 }
 
 function loadCharacters(filename) {
@@ -51,18 +51,12 @@ function loadCharacters(filename) {
 
 function showCharacters(data) {
   $(".characterList").html(data);
-  clickCharacters(".characterList");
+  clickCharacters();
 }
 
 
-function clickCharacters(holder) {
-  $(holder+" span").on('click',function(){
-    if($(this).parent().is("span")){
-      return;
-    }
-    if($(this).hasClass("highlight")) {
-      $(".highlight").removeClass("highlight")
-    } else {
+function clickCharacters() {
+  $(".characters span").on('click',function(){
       var classField = $(this).attr("class");
       var classes = classField.split(" ")
       $(".highlight").removeClass("highlight")
@@ -70,8 +64,21 @@ function clickCharacters(holder) {
         $("."+classes[i]).addClass("highlight")
       }
       scrollTo($(".body ."+classes[0]+":first"))
-    }
   });
+}
+
+function clickInText() {
+    $(".body span").on('click',function() {
+		if($(this).parent().is("span")){
+	      return;
+	    }
+		$(".highlight").removeClass("highlight");
+		var classes = $(this).attr("class");
+		classes = $(".characters ."+classes).attr("class");
+	    for(var i = 0; i<classes.length;i++) {
+	      $("."+classes[i]).addClass("highlight")
+	    }
+    });
 }
 
 function marktag(span) {
